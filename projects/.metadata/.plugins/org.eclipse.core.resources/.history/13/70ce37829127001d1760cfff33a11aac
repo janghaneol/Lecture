@@ -1,0 +1,28 @@
+package namoo.yorizori.dao.cookbook;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import javax.sql.DataSource;
+
+import namoo.yorizori.dto.cookbook.Cookbook;
+
+public class JdbcCookbookDao implements CookbookDao{
+	private DataSource dataSource;
+
+	public JdbcCookbookDao(DataSource dataSource) {
+		this.dataSource = dataSource;
+	}
+	
+	@Override
+	public void registerCookbook(Cookbook cookbook) throws SQLException {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		StringBuffer sb = new StringBuffer();
+		sb.append(" INSERT INTO users(id, passwd, name, email)")
+          .append(" VALUES (?, ?, ?, ?)");
+		
+	}
+	
+}

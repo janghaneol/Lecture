@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;FileInputStreamExample.java&apos; to &apos;namoo.tutorial.io.FileInputStreamExample.java&apos;&#x0D;&#x0A;- Original project: &apos;namoo.tutorial.io&apos;&#x0D;&#x0A;- Destination element: &apos;namoo.tutorial.io.FileInputStreamExample.java&apos;&#x0D;&#x0A;- Original element: &apos;namoo.tutorial.io.FileInputStreamExample.java&apos;" description="Copy compilation unit" destination="/src&lt;namoo.tutorial.io{FileInputStreamExample.java" element1="/src&lt;namoo.tutorial.io{FileInputStreamExample.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1654865036261" units="1" version="1.0"/>
+</session>

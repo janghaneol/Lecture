@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      border : 1px solid black;
+      margin: 10px 10px;
+    }
+  </style>
+  
+</head>
+
+<body>
+  <div>div클릭
+    <div>p클릭
+      <h2>h2클릭</h2>
+    </div>
+  </div>
+</body>
+<script defer>
+  let elements = document.querySelectorAll("*");
+  for (const element of elements) {
+    element.addEventListener("click",function(){
+      console.log("버블링 : " + element.nodeName);
+    }, true); //이벤트 캡쳐링 true값만 지우면 버블링이 된다.
+  }
+</script>
+</html>

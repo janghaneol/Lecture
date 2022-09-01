@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 기본타입 -> JSON으로 
+    let name= '장한얼';
+    let age = 10;
+    let jsonString = JSON.stringify(name);
+    let jsonNumber = JSON.stringify(age);
+    console.log(jsonString, jsonNumber);
+    console.log(typeof jsonNumber);
+
+    // Object -> JSON
+    let person = {
+      name : "장한얼",
+      age : 30,
+      weight : null,
+      // DATE객체의 월은 0부터 시작하기때문에 11을넣어야 12값이 객체에 저장
+      birthday : new Date(1993,11,13),
+      toString : function() {
+        return `${this.name}, ${this.age}, ${this.weight}, ${this.birthday.toLocaleString()}`;
+      }
+    };
+    console.log(person.toString());
+    let personJson =JSON.stringify(person);
+    console.log(personJson);
+    console.log(typeof personJson);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

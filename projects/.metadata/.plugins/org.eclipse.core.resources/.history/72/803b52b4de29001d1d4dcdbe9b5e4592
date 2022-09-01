@@ -1,0 +1,43 @@
+package namoo.yorizori.dto.cookbook;
+
+/**
+ * Recipe DTO
+ * @author 김기정
+ *
+ */
+public class Recipe {
+	private int recipe_id;
+	private int book_id;
+	private String recipe_name;
+	private int recipe_time;
+	private int recipe_level;
+	private String ingredients;
+	private String writer_id; 
+	
+	public Recipe() {
+		
+	}
+
+	public Recipe(int recipe_id, int book_id, String recipe_name, int recipe_time, int recipe_level, String ingredients,
+			String writer_id) {
+		
+		this.recipe_id = recipe_id;
+		this.book_id = book_id;
+		this.recipe_name = recipe_name;
+		this.recipe_time = recipe_time;
+		this.recipe_level = recipe_level;
+		this.ingredients = ingredients;
+		this.writer_id = writer_id;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Recipe [recipe_id=" + recipe_id + ", book_id=" + book_id + ", recipe_name=" + recipe_name
+				+ ", recipe_time=" + recipe_time + ", recipe_level=" + recipe_level + ", ingredients=" + ingredients
+				+ ", writer_id=" + writer_id + "]";
+	}
+	
+	
+}

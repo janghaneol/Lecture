@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    header{
+      height : 30px;
+      background-color: blue;
+    }
+    ul{
+      border: 2px dashed black;
+      background-color: aqua;
+    }
+    nav>ul>li{
+      background-color: red;
+      display: inline-block;
+      width: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+  <form action="login.do" method="post">
+  	<input type="text" name="id" maxlength="8">
+  	<input type="password" name="passwd" maxlength="8">
+  	<input type="submit" value="로그인">
+  </form>
+  </header>
+  <nav id="container">
+    <ul>
+      <li>메뉴1</li>
+      <li>메뉴2</li>
+      <li>메뉴3</li>
+    </ul>
+  </nav>
+</body>
+</html>
+<!-- 과제, float속성을 사용하면 쉽게 해결 가능. -->

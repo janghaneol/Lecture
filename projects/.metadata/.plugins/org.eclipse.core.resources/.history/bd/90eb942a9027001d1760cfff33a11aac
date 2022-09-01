@@ -1,0 +1,5 @@
+package namoo.yorizori.dao.cookbook;
+
+public class JdbcCookbookDao {
+
+}

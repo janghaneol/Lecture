@@ -1,0 +1,16 @@
+package namoo.yorizori.dto.cookbook;
+
+/**
+ * Recipe DTO
+ * @author 김기정
+ *
+ */
+public class Recipe {
+	private int recipe_id;
+	private int book_id;
+	private String recipe_name;
+	private int recipe_time;
+	private int recipe_level;
+	private String ingredients;
+	private String writer_id; 
+}

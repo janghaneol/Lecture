@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" onclick="alert('div 클릭');">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.addEventListener("load", function(event){
+      alert("문서 로드 완료");
+      window.addEventListener("resize",function(event){
+        document.querySelector("body").innerHTML = `<h2>${window.innerWidth} X ${window.innerHeight}</h2>`;
+      });
+    });
+  </script>
+</head>
+<body>
+
+  <div>클릭</div>
+
+</body>
+</html>

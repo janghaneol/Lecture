@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form element</title>
+</head>
+
+<body>
+  <form action="http://localhost/servlet/form.do" method="post">
+    <label for="id">id:</label>
+    <input type="text" id="id" name="id"autofocus maxlength="11"><br><br>
+
+    <label for="name">이름:</label>
+    <input type="text" id="name" name="name"  maxlength="11"><br><br>
+
+    <label for="passwd">password:</label>
+    <input type="password" id="passwd" name="passwd"><br><br>
+
+    <label for="language">자바</label>
+    <input type="checkbox" id="language" name="language" value="Java">
+    <label for="language2">자바스크립트</label>
+    <input type="checkbox" id="language2" name="language" value="JavaScript">
+    <label for="language3">씨에스에스</label>
+    <input type="checkbox" id="language3" name="language" value="CSS">
+    <br><br>
+    <label for="cars">자동차</label>
+    <select name="cars" id="cars">
+      <option value="volvo">볼보</option>
+      <option value="saab">싸브</option>
+      <option value="audi">아우디</option>
+    </select>
+    <br><br>
+    <input type="reset" value="초기화">
+    <input type="submit" name="" value="전송">
+  </form>
+</body>
+
+</html>

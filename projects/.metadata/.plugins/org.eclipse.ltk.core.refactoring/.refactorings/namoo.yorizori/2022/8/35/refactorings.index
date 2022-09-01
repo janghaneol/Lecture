@@ -1,0 +1,21 @@
+1661170081355	Move 'index.html' to 'webapp'
+1661250948762	Delete element
+1661251217692	Move 'index.jsp' to 'html'
+1661251223046	Rename resource 'index.jsp'
+1661251274529	Copy folders
+1661251388773	Delete element
+1661252814979	Copy file
+1661252826450	Rename resource 'index.jsp'
+1661255062370	Rename package 'namoo.common.factory'
+1661255136220	Rename package 'namoo.common.web'
+1661255243321	Rename package 'namoo.user.dao'
+1661255264664	Rename package 'namoo.user.dto'
+1661255323989	Rename package 'namoo.yorizori.user'
+1661336989514	Rename type 'UserRegistServlet'
+1661340536686	Delete element
+1661342932242	Rename package 'namoo.yorizori.servlet.user'
+1661344416390	Delete element
+1661515483697	Rename package 'cookbook'
+1661515498713	Rename package 'user'
+1661516152328	Delete element
+1661516782451	Delete element

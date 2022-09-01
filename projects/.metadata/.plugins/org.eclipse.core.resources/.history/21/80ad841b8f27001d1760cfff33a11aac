@@ -1,0 +1,15 @@
+package namoo.yorizori.dao.cookbook;
+
+import java.sql.SQLException;
+
+import namoo.yorizori.dto.cookbook.Cookbook;
+
+public class JdbcCookbookDao implements CookbookDao {
+
+	@Override
+	public void regist(Cookbook cookbook) throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

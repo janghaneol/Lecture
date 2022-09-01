@@ -1,0 +1,15 @@
+package nomoo.tutorial.network.chat.client;
+
+import java.net.Socket;
+
+public class ClientService {
+	static final String IP = "127.0.0.1";
+	static final int PORT = 2022;
+	private Socket socket;
+	
+	public Socket getSocket() {
+		return socket;
+	}
+	
+	
+}

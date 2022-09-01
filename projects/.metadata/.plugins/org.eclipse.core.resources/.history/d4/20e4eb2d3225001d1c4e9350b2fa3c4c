@@ -1,0 +1,7 @@
+package namoo.yorizori.common.web;
+
+import javax.servlet.ServletContextListener;
+
+public class ServletContextInitListener implements ServletContextListener {
+
+}
