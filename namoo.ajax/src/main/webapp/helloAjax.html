@@ -6,6 +6,14 @@
 <script type="module" defer>
 function getAjaxMessage() {
 	let xmlHttpRequest= new XMLHttpRequest();
+	xmlHttpRequest.open("get", "helloAjax.jsp");
+	//이벤트리스너 등록
+	xmlHttpRequest.onreadystatechange = function () {
+		if(xmlHttpRequest.readyState ===4){
+			alert("데이터 수신 완료.");
+		}
+	}
+	xmlHttpRequest.send();
 }
 
 document.querySelector("#button").addEventListener("click", event => alert("OK"));
