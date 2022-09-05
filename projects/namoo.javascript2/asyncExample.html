@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<script>
+  // Callback 함수를 이용한 비동기 프로그래밍
+
+  console.log("1");
+  setTimeout(() => { console.log("2"); }, 3000);
+  console.log("3");
+
+  //비동기적으로 동작하는 함수 정의
+  function printDelay(callback, time) {
+    setTimeout(callback, time);
+  }
+
+  printDelay(() => console.log("5초후 실행되는 비동기 실행 함수"), 5000);
+
+  console.log("비동기실행을 기다리는 동기실행");
+
+
+
+</script>
+<body>
+  
+</body>
+</html>

@@ -29,6 +29,41 @@
     let personJson =JSON.stringify(person);
     console.log(personJson);
     console.log(typeof personJson);
+    // 배열을 이용한 직렬화 대상 설정
+    console.log(JSON.stringify(person,["name", "age"]));
+
+    // callback 함수를 이용한 객체의 프로퍼티값 제어
+    let su = JSON.stringify(person, function(key, value){
+      return key === 'weight' ? "50" : value;
+    });
+    console.log(su);
+    
+
+    //Array -> JSON
+    let languages = ["JAVA", "HTML", "JavaScript", {title:"SQL", author:"이화석"}];
+    const jsonLangs = JSON.stringify(languages);
+    console.log(languages);
+    console.log(jsonLangs);
+    console.log(typeof languages);
+
+    // 역직렬화 (JSON -> Object)
+    let jsonStudent = '{"ssn": "10",  "name": "장한얼"}';
+    let student = JSON.parse(jsonStudent);
+    console.log(typeof student);
+    console.log(student.ssn, student.name);
+
+    person = JSON.parse(personJson);
+    console.log(person.name, person.weight, person.birthday);
+    // person 객체의 birthday는 date()객체를 참조하였으나 JSON.stringfy()하면서
+    // 문자열로 변환되었기때문에 person객체의 birthday값은 String타입이 되어있어 Date()객체를 불러올 수 없다.
+    console.log(typeof person.birthday);
+    
+    // Callback 함수를 이용하여 객체 제어
+    person=JSON.parse(personJson, function(key, value) {
+        return key === 'birthday' ? new Date(value) : value;
+    });
+    console.dir(person); // -> 다시 오브젝트로 
+
   </script>
 </head>
 <body>
