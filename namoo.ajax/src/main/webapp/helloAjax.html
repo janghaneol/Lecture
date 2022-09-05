@@ -10,13 +10,14 @@ function getAjaxMessage() {
 	//이벤트리스너 등록
 	xmlHttpRequest.onreadystatechange = function () {
 		if(xmlHttpRequest.readyState ===4){
-			alert("데이터 수신 완료.");
+			document.querySelector("#message").innerHTML = xmlHttpRequest.responseText
+			
 		}
 	}
 	xmlHttpRequest.send();
 }
 
-document.querySelector("#button").addEventListener("click", event => alert("OK"));
+document.querySelector("#button").addEventListener("click", event => getAjaxMessage());
 
 </script>
 </head>
