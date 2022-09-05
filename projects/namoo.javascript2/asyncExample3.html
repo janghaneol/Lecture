@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let id = "bangry";
+        let passwd = "1111";
+        //promise 객체를 이용한 비동기 통신
+        let promise = new Promise(function(resolve, reject) {
+            
+            setTimeout(() => {
+                if(id==='bangry' && passwd ==='1111'){
+                    //성공시
+                    resolve(id);
+                }else{
+                    //실패시 
+                    reject(new Error("회원정보를 확인하세요."));
+                }
+            },2000);
+        });
+        console.dir(promise);
+        promise
+        .then(function (loginId){
+            alert(loginId);
+        })
+        .catch(function(error){
+            alert(error);
+        });
+
+    </script>
+
+</body>
+</html>

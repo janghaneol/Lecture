@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let id = "bangry";
+        let passwd = "1111";
+        //promise 객체를 이용한 비동기 통신
+        new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if(id==='bangry' && passwd ==='1111'){
+                    //성공시
+                    resolve(id);
+                }else{
+                    //실패시 
+                    reject(new Error("회원정보를 확인하세요."));
+                }
+            },2000);
+        })
+        .then(loginId => new Promise((resolve, reject) => resolve(loginId += "(김기정)")))
+        .then(user => alert(user))
+        .catch(error => alert(error))
+        .finally(() => alert("정상처리되든 에러가 발생하든 실행되는 코드"));
+
+    </script>
+
+</body>
+</html>
