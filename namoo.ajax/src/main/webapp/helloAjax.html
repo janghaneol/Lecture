@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax 비동기 프로그래밍</title>
+<script type="module" defer>
+function getAjaxMessage() {
+	let xmlHttpRequest= new XMLHttpRequest();
+}
+
+document.querySelector("#button").addEventListener("click", event => alert("OK"));
+
+</script>
+</head>
+<body>
+<form action="helloAjax.jsp">
+	<input type="submit" value="서버에서 데이터 수신(동기처리)">
+</form>
+
+<button id="button">서버에서 데이터 수신(비동기처리)</button>
+
+</body>
+</html>
