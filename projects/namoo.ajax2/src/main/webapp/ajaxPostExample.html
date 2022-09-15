@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax 비동기 프로그래밍</title>
+<script type="module" defer>
+function getAjaxMessage() {
+	let xmlHttpRequest= new XMLHttpRequest();
+	// get방식일때 전달하는 방법
+	// xmlHttpRequest.open("get", "helloAjax.jsp?id=bangry&pw=1111");
+
+	// post 데이터 전송
+	xmlHttpRequest.open("post", "ajaxParameter.jsp");
+	xmlHttpRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	//이벤트리스너 등록
+	xmlHttpRequest.onreadystatechange = function () {
+		// 데이터 수신 완료
+		if(xmlHttpRequest.readyState ===4){
+			document.querySelector("#message").innerHTML = xmlHttpRequest.responseText
+			
+		}
+	}
+	// xmlHttpRequest.send(); -> get방식일땐 비어있음
+	xmlHttpRequest.send("id=bangry&pw=1111") //Post방식
+}
+
+document.querySelector("#button").addEventListener("click", event => getAjaxMessage());
+
+</script>
+</head>
+<body>
+<form action="helloAjax.jsp" >
+	<input type="submit" value="서버에서 데이터 수신(동기처리)">
+</form>
+
+<button id="button">서버에서 데이터 수신(비동기처리)</button>
+
+</body>
+</html>

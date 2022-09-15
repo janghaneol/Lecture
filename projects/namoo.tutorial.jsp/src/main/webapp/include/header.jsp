@@ -1,5 +1,5 @@
-<%@page import="namoo.yorizori.common.factory.JdbcDaoFactory"%>
-<%@page import="namoo.yorizori.dto.user.User"%>
+<%@page import="namoo.common.factory.JdbcDaoFactory"%>
+<%@page import="namoo.user.dto.User"%>
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <jsp:include page="/user/login.jsp"></jsp:include>
 

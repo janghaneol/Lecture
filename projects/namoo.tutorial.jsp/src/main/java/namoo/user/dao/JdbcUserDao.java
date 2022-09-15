@@ -48,8 +48,8 @@ public class JdbcUserDao implements UserDao {
 	}
 
 	@Override
-	public boolean read(String id) throws SQLException {
-		boolean result = false;
+	public User read(String id) throws SQLException {
+//		boolean result = false;
 		User user = null;
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -64,7 +64,8 @@ public class JdbcUserDao implements UserDao {
 			pstmt = con.prepareStatement(sb.toString());
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
-			result = rs.next();
+//			result = rs.next();
+			user = createUser(rs);
 		} finally {
 			if (rs != null)
 				rs.close();
@@ -73,7 +74,8 @@ public class JdbcUserDao implements UserDao {
 			if (con != null)
 				con.close();
 		}
-		return result;
+//		return result;
+		return user;
 	}
 
 	@Override

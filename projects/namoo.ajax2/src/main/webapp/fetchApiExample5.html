@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module" defer>
+      document.querySelector("#button").addEventListener("click",registUser());
+
+      function registUser() {
+        let user = {
+          id: "bangry",
+          name: "김기정",
+          email: "bangry@gmail.com"
+        };
+        const option = {
+          method: "POST",
+          Headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(user),
+        };
+
+        fetch("users", option)
+          .then(Response => Response.json())
+          .then(Response => {
+            console.dir(Response);
+            userList(Response);
+          })
+          
+      }
+
+      function userList(Response) {
+        
+        
+
+        var table =
+          "<table style='width: 70%' border='1'>" +
+          "  <tr>" +
+          "    <th>ID</th>" +
+          "    <th>이름</th>" +
+          "    <th>이메일</th>" +
+          "  </tr>";
+          for (let i = 0; i < Response.length; i++) {
+          table += "<tr>";
+          table += "  <td>" + (i + 1) + "</td>";
+          let user = Response.list[i];
+          table += "<td>"+Response.id+"</td>";
+          table += "<td>"+Response.name+"</td>";
+          table += "<td>"+Response.email+"</td>";
+          table += "</tr>";
+        }
+        table += "</table>";
+        document.querySelector("#message").innerHTML = table;
+      }
+    
+    </script>
+  </head>
+  <b이벤트ody>
+    <button id="button">회원가입 및 결과수신(JSON)</button>
+    
+    <div id="message"></div>
+  </body>
+ 
+
+</html>

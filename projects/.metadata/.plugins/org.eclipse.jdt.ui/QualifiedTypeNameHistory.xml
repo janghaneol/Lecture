@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="namoo.tutorial.jdbc.ConnectionFactory"/>
-    <fullyQualifiedTypeName name="namoo.user.dao.MybatisUserDao"/>
-    <fullyQualifiedTypeName name="namoo.user.dao.JdbcUserDao"/>
-    <fullyQualifiedTypeName name="java.util.Enumeration"/>
-    <fullyQualifiedTypeName name="java.io.OutputStream"/>
-    <fullyQualifiedTypeName name="java.io.InputStream"/>
-    <fullyQualifiedTypeName name="java.io.FileInputStream"/>
-    <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
-    <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="namoo.tutorial.servlet.ServletConfigServlet"/>
     <fullyQualifiedTypeName name="javax.servlet.ServletException"/>
@@ -26,7 +17,6 @@
     <fullyQualifiedTypeName name="namoo.user.dao.UserDao"/>
     <fullyQualifiedTypeName name="oracle.net.aso.r"/>
     <fullyQualifiedTypeName name="java.lang.Appendable"/>
-    <fullyQualifiedTypeName name="java.io.PrintWriter"/>
     <fullyQualifiedTypeName name="javax.servlet.http.Cookie"/>
     <fullyQualifiedTypeName name="org.apache.coyote.http11.upgrade.UpgradeApplicationBufferHandler"/>
     <fullyQualifiedTypeName name="javax.servlet.annotation.WebListener"/>
@@ -49,15 +39,25 @@
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
-    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="namoo.yorizori.common.factory.JdbcDaoFactory"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="namoo.yorizori.dao.cookbook.CookbookDao"/>
     <fullyQualifiedTypeName name="org.apache.jasper.tagplugins.jstl.core.Param"/>
     <fullyQualifiedTypeName name="namoo.yorizori.dto.cookbook.Cookbook"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="namoo.yorizori.dto.user.User"/>
     <fullyQualifiedTypeName name="namoo.yorizori.common.web.YZRuntimeException"/>
+    <fullyQualifiedTypeName name="namoo.ajax.Servlet.userServlet"/>
+    <fullyQualifiedTypeName name="com.google.gson.reflect.TypeToken"/>
+    <fullyQualifiedTypeName name="com.google.gson.GsonBuilder"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="com.google.gson.JsonObject"/>
+    <fullyQualifiedTypeName name="java.io.PrintWriter"/>
+    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
+    <fullyQualifiedTypeName name="com.google.gson.Gson"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="namoo.ajax.User"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
 </qualifiedTypeNameHistroy>

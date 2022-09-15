@@ -13,8 +13,8 @@ public class MybatisUserDao implements UserDao {
 	}
 
 	@Override
-	public boolean read(String id) throws SQLException {
-		return true;
+	public void read(String id) throws SQLException {
+//		return true;
 	}
 
 	@Override

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module" defer>
+      document.querySelector("#button").addEventListener("click",requestFetch);
+      function requestFetch() {
+        fetch("jsonBookList.jsp")
+          .then(response => response.json())
+          .then(response => {
+            let page = response.page;
+            let title = response.list[0].title;
+
+            document.querySelector("#message").innerHTML = `${page}, ${title}`
+          })
+          .catch(error => console.log(error));
+      }
+    
+    </script>
+  </head>
+  <body>
+    <button id="button">서버에서 TEXT 수신</button>
+    <h4></h4>
+    <div id="message"></div>
+  </body>
+ 
+
+</html>

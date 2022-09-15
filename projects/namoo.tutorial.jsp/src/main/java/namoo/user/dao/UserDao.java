@@ -17,7 +17,8 @@ public interface UserDao {
 	public void create(User user) throws SQLException;
 	
 	/* 사용자 아이디에 해당하는 정보 반환*/
-	public boolean read(String id) throws SQLException;
+	public User read(String id) throws SQLException;
+	
 	
 	/* 사용자 로그인 */
 	public User login(String id, String password) throws SQLException;

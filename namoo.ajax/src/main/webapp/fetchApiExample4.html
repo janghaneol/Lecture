@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module" defer>
+      document.querySelector("#button").addEventListener("click",requestFetch);
+      
+      function sendJson() {
+        let user = {
+          id : "bangry",
+          name : "김기정",
+          age : 20,
+        };
+        const option = {
+          method : "POST",
+          headers : {"Content-Type" : "application/json"},
+          body : JSON.stringify(user)
+        };
+
+
+        fetch("userJson.jsp",option)
+          .then(response => response.json())
+          .then(response => {
+			let id = response.id;
+			let name = response.name;
+			let age = response.agee;
+	
+          document.querySelector("#message").innerHTML = `${id}, ${name}, ${age}`;})
+          
+          .catch(error => console.log(error));
+      }
+
+    
+    </script>
+  </head>
+  <body>
+    <button id="button">서버 JSON 전송</button>
+    
+    <div id="message"></div>
+  </body>
+ 
+
+</html>

@@ -1,4 +1,4 @@
-<%@page import="namoo.yorizori.dto.user.User"%>
+<%@page import="namoo.user.dto.User"%>
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%
 HttpSession  loginSession = request.getSession();

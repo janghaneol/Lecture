@@ -1,5 +1,0 @@
-package namoo.yorizori.common.web;
-
-public class YZRuntimeException {
-
-}

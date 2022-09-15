@@ -25,8 +25,8 @@
             <div class="mb-3">
               <label for="id" class="form-label">아이디</label> <input
                 type="text" class="form-control" id="id" name="id"
-                placeholder="Write Your Id" required> <input
-                id="dupCheck" type="button" value="중복체크">
+                placeholder="Write Your Id" required> 
+                <p id="dupCheck"></p>
             </div>
 
             <div class="mb-3">
