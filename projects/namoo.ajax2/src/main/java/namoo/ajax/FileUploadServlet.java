@@ -15,11 +15,6 @@ import javax.servlet.http.Part;
 
 import org.apache.catalina.connector.Request;
 
-import namoo.yorizori.common.factory.JdbcDaoFactory;
-import namoo.yorizori.common.factory.ServiceFactoryImpl;
-import namoo.yorizori.common.web.YZRuntimeException;
-import namoo.yorizori.dto.cookbook.Cookbook;
-import namoo.yorizori.dto.user.User;
 
 /**
  * Servlet implementation class CookbookRegistController
@@ -48,6 +43,7 @@ public class FileUploadServlet extends HttpServlet {
 		response.setContentType("text/plain; charset=utf-8");
 		PrintWriter pw = response.getWriter();
 		pw.print("파일 정상 업로드 처리 완료");
+		
 	}
 
 }

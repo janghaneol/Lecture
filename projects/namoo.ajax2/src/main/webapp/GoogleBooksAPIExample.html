@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module" defer>
+      document.querySelector("#bookBtn").addEventListener("click",booklist);
+
+      // 구글이 제공하는 google open API book list
+      function booklist() {
+        const url = "https://www.googleapis.com/books/v1/volumes?q=java";
+      
+        
+        fetch(url)
+          .then(Response => Response.json())
+          .then(Response => {
+          console.dir(Response);
+          printBookList(Response);
+        })
+      }
+      // 책 목록 테이블 출력
+      function printBookList(Response) {
+        var table =
+          `<table style='width: 70%' border='1'>
+            <caption>검색된 책 갯수 : 총 ${Response.totalItems}</caption>
+            <tr>
+              <th>책이름</th><th>저자</th><th>출판일자</th>
+            </tr>`;
+        for(const book of Response.items){
+          table += `<tr><td>${book.volumeInfo.title}</td><td>${book.volumeInfo.authors}</td><td>${book.volumeInfo.publishedDate}</td></tr>`
+        }
+        table += `</table>`;
+        document.querySelector("#message").innerHTML = table;
+      }
+
+    </script>
+  </head>
+  <body>
+    <button id="bookBtn">책목록</button>
+    <div id="message"></div>
+  </body>
+ 
+
+</html>
