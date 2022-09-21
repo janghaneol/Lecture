@@ -4,14 +4,43 @@
                         
 <mapper namespace="student.mapper.StudentMapper">
 
-	<select id="findAll" resultType="student.dto.Student">
-	SELECT  	 num,
-       			 name,
-       			 kor,
-        		 eng,
-        		 math
-	FROM    students
-	ORDER BY num
-	</select>
+	<resultMap  id="Student" type="student.dto.Student">
+		<result property="num"           column="num"/>
+		<result property="name"        column="name"/>
+		<result property="kor"  column="kor"/>
+		<result property="eng"     column="eng"/>
+		<result property="math"     column="math"/>
+	</resultMap>
 
+	<!-- 전체 학생 조회 
+	<select id="findStudentAll" resultType="student.dto.Student">
+	SELECT NUM, NAME, KOR, ENG, MATH 
+	from STUDENTS
+	ORDER BY NUM
+	</select>
+	-->
+	
+	<!-- 학생이름이나 번호로 검색 -->
+	<select id="search" parameterType="map" resultType="Student">
+	SELECT NUM, NAME, KOR, ENG, MATH
+	FROM STUDENTS
+	<if test="type != null">
+		<choose>
+			<when test="type == 'num'">
+			WHERE NUM = #{value}
+			</when>
+			<when test="type == 'name'">
+			WHERE NAME = #{value}
+			</when>
+			<otherwise></otherwise>
+		</choose>
+	</if>
+	ORDER BY NUM
+	</select>
+	
+	<!-- 학생 등록 -->
+	<insert id="create" parameterType="Student">
+	INSERT INTO STUDENTS (NUM, NAME, KOR, ENG, MATH) 
+	VALUES (#{num}, #{name}, #{kor}, #{eng}, #{math})
+	</insert>
 </mapper>                     

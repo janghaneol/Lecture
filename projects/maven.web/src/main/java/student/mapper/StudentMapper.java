@@ -1,16 +1,17 @@
 package student.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import student.dto.Student;
 
-public class StudentMapper {
+public interface StudentMapper {
 	
 	/*학생 전체목록 조회*/
-	public List<Student> findAll();
+	public List<Student> findStudentAll();
 	
 	/*학생 검색*/
-	public List<Student> search();
+	public List<Student> search(Map<String, Object> param);
 	
 	/*학생 등록*/
 	public void create(Student student);
