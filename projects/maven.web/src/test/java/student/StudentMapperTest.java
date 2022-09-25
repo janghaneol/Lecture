@@ -35,7 +35,7 @@ public class StudentMapperTest {
 	}
 	
 	@Test
-	@Disabled
+//	@Disabled
 	public void test1() {
 		System.out.println("================ 전체 학생 조회 =====================");
 		StudentMapper mapper = sqlsession.getMapper(StudentMapper.class);

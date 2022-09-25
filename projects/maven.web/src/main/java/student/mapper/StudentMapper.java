@@ -8,7 +8,7 @@ import student.dto.Student;
 public interface StudentMapper {
 	
 	/*학생 전체목록 조회*/
-	public List<Student> findStudentAll();
+	public List<Student> search();
 	
 	/*학생 검색*/
 	public List<Student> search(Map<String, Object> param);
