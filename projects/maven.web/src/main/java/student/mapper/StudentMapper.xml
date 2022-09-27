@@ -22,17 +22,16 @@
 	
 	<!-- 학생이름이나 번호로 검색 -->
 	<select id="search" parameterType="map" resultType="Student">
-	SELECT NUM, NAME, KOR, ENG, MATH
-	FROM STUDENTS
+	SELECT num, name, kor, eng, math
+	FROM students
 	<if test="type != null">
 		<choose>
-			<when test="type == 'num'">
-			WHERE NUM = #{value}
+			<when test="type == 'ssn'">
+			WHERE num = #{value}
 			</when>
 			<when test="type == 'name'">
-			WHERE NAME = #{value}
+			WHERE name = #{value}
 			</when>
-			<otherwise></otherwise>
 		</choose>
 	</if>
 	ORDER BY NUM

@@ -26,39 +26,52 @@ import com.google.gson.Gson;
 import student.dto.Student;
 import student.mapper.StudentMapper;
 
-
 /**
  * Student Service Servlet
  */
 //@WebServlet("/students")
 public class StudentController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-		
+
 	// 학생 목록 처리
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String type = request.getParameter("type");
+		String value = request.getParameter("value");
+
 		SqlSession sqlSession;
 		String resource = "mybatis-config.xml";
 		Reader reader = null;
 		reader = Resources.getResourceAsReader(resource);
 		SqlSessionFactory sqlsessionfactory = new SqlSessionFactoryBuilder().build(reader);
 		sqlSession = sqlsessionfactory.openSession();
-		
+
 		StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
-		Map result = new HashMap();
-		List<Student> studentList = new ArrayList<Student>(mapper.search());
 		
-		result.put("studentList", studentList);
+		List<Student> list = null;
+		//전체검색
+		if (type == null) {
+			list = mapper.search();
+		}else {//학번검색
+			Map<String, Object> map = new HashMap<String, Object>();
+			map.put("type", type);
+			map.put("value", value);
+			list = mapper.search(map);
+		}
+
 		Gson gson = new Gson();
-		String stu = gson.toJson(studentList);
-		PrintWriter pw = response.getWriter();
-		response.setContentType("aplication/json; charset=utf-8");
-		pw.print(stu);
+		String stu = gson.toJson(list);
 //		System.out.println(stu);
+
+		response.setContentType("aplication/json; charset=utf-8");
+		PrintWriter pw = response.getWriter();
+		
+		pw.print(stu);
 		pw.close();
 	}
 
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		SqlSession sqlSession;
 		String resource = "mybatis-config.xml";
 		Reader reader = null;
@@ -74,9 +87,9 @@ public class StudentController extends HttpServlet {
 		Map result = new HashMap();
 		Student student = gson.fromJson(in, Student.class);
 		System.out.println(student);
-		
+
 		mapper.create(student);
-		
+
 	}
 
 }
