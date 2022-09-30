@@ -61,7 +61,6 @@ public class StudentController extends HttpServlet {
 
 		Gson gson = new Gson();
 		String stu = gson.toJson(list);
-//		System.out.println(stu);
 
 		response.setContentType("aplication/json; charset=utf-8");
 		PrintWriter pw = response.getWriter();
@@ -87,9 +86,9 @@ public class StudentController extends HttpServlet {
 		Map result = new HashMap();
 		Student student = gson.fromJson(in, Student.class);
 		System.out.println(student);
-
 		mapper.create(student);
-
+		result.put("Student", response);
+		
 	}
 
 }

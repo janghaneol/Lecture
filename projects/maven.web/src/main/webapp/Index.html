@@ -43,7 +43,7 @@ button {
         };
         fetch("students", option)
           .then(Response => {
-            alert(`${Response}가 생성되었습니다.`);
+            alert(`${student.name}가 생성되었습니다.`);
             console.dir(Response);
           })
       }
@@ -59,7 +59,7 @@ button {
       }
       
       // 학번으로 검색
-      function findBySsn() {
+    function findBySsn() {
 		const ssn = document.querySelector("#num").value;
         fetch(`students?type=ssn&value=${ssn}`)
           .then(Response => Response.json())
