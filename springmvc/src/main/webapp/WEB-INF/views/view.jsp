@@ -1,12 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="utf-8"%>
+<%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>Insert title here</title>
+<title></title>
 </head>
 <body>
-강아지 이름 : ${dog.name} , 나이 : ${dog.age}
+강아지 이름 : ${dog.name}, 나이 : ${dog.age}
 </body>
 </html>

@@ -25,12 +25,12 @@ import namoo.springmvc.dto.Dog;
 @Controller
 public class RequestParamController2 {
 	
-//	@GetMapping("/param")
-//	@ResponseBody
-//	public String param(@RequestParam("name") String name, 
-//						@RequestParam("age") int age) {
-//		return "�̸� : "+name+", ���� :" +age;
-//	}
+	@GetMapping("/param")
+	@ResponseBody
+	public String param(@RequestParam("name") String name, 
+						@RequestParam("age") int age) {
+		return "이름 : "+name+", 나이 :" +age;
+	}
 	@PostMapping("/param2")
 	@ResponseBody
 	public String param(@RequestParam Map<String, Object> paramMap) {

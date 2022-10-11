@@ -1,16 +1,6 @@
 package namoo.springmvc.controller;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.Writer;
-import java.nio.charset.StandardCharsets;
-
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.RequestEntity;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.StreamUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -26,20 +16,28 @@ public class RequestJsonController {
 	
 	@PostMapping("/request-json")
 	@ResponseBody
-	public String requestJson(@RequestBody String jsonMessage) throws IOException{
+	public String requestJson(@RequestBody String jsonMessage) throws JsonMappingException, JsonProcessingException{
 		System.out.println(jsonMessage);
 		ObjectMapper objectMapper = new ObjectMapper();
 		Dog dog = objectMapper.readValue(jsonMessage, Dog.class);
 		System.out.println(dog);
-		return dog.getName();
+		return jsonMessage;
 	}
 	
 	@PostMapping("/request-json2")
 	@ResponseBody
-	public Dog requestJson(@RequestBody Dog dog) throws IOException{
+	public Dog requestJson(@RequestBody Dog dog) throws JsonMappingException, JsonProcessingException{
 		System.out.println(dog);
-		// DB에 인서트하는 경우에 용이함.
+		// DB에 인서트 가정
 		return dog;
 	}
 	
 }
+
+
+
+
+
+
+
+

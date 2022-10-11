@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="utf-8"%>
+<%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>Insert title here</title>
+<title></title>
 </head>
 <body>
-임시 ${name} 의 페이지입니다.
+임시 ${name} 페이지 입니다..<br>
+오늘 날짜 : ${today}
 </body>
 </html>

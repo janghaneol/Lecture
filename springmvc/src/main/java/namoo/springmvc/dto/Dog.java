@@ -5,9 +5,8 @@ public class Dog {
 	private int age;
 	
 	public Dog() {}
-	
+
 	public Dog(String name, int age) {
-		super();
 		this.name = name;
 		this.age = age;
 	}
@@ -15,12 +14,15 @@ public class Dog {
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public int getAge() {
 		return age;
 	}
+
 	public void setAge(int age) {
 		this.age = age;
 	}
@@ -29,6 +31,4 @@ public class Dog {
 	public String toString() {
 		return "Dog [name=" + name + ", age=" + age + "]";
 	}
-	
-	
 }

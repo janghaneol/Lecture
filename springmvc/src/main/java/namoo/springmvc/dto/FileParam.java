@@ -2,14 +2,14 @@ package namoo.springmvc.dto;
 
 public class FileParam {
 	private String fileName;
-	private String originaFileName;
+	private String originalFileName;
 	private String contentType;
 	
-	public FileParam(){}
+	public FileParam() {}
 	
-	public FileParam(String fileName, String originaFileName, String contentType) {
+	public FileParam(String fileName, String originalFileName, String contentType) {
 		this.fileName = fileName;
-		this.originaFileName = originaFileName;
+		this.originalFileName = originalFileName;
 		this.contentType = contentType;
 	}
 
@@ -21,12 +21,12 @@ public class FileParam {
 		this.fileName = fileName;
 	}
 
-	public String getOriginaFileName() {
-		return originaFileName;
+	public String getOriginalFileName() {
+		return originalFileName;
 	}
 
-	public void setOriginaFileName(String originaFileName) {
-		this.originaFileName = originaFileName;
+	public void setOriginalFileName(String originalFileName) {
+		this.originalFileName = originalFileName;
 	}
 
 	public String getContentType() {
@@ -39,7 +39,7 @@ public class FileParam {
 
 	@Override
 	public String toString() {
-		return "FileParam [fileName=" + fileName + ", originaFileName=" + originaFileName + ", contentType="
+		return "FileParam [fileName=" + fileName + ", originalFileName=" + originalFileName + ", contentType="
 				+ contentType + "]";
 	}
 

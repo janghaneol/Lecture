@@ -22,27 +22,32 @@ public class RequestBodyController {
 	public void requestBodyText(InputStream in, Writer out) throws IOException {
 		String bodyMessage = StreamUtils.copyToString(in, StandardCharsets.UTF_8);
 		System.out.println(bodyMessage);
-		out.write(bodyMessage + "OK!");
+		out.write(bodyMessage + "OK~~~");
 	}
 	
 	@PostMapping("/request-body2")
 	public HttpEntity<String> requestBodyText(HttpEntity<String> httpEntity){
 		String bodyMessage = httpEntity.getBody();
-		System.out.println(bodyMessage);
-		return new HttpEntity<String>(bodyMessage + "를 전송함");
+		return new HttpEntity<String>(bodyMessage);
 	}
 	
 	@PostMapping("/request-body3")
 	public ResponseEntity<String> requestBodyText(RequestEntity<String> httpEntity){
 		String bodyMessage = httpEntity.getBody();
-		System.out.println(bodyMessage);
-		return new ResponseEntity<String>(bodyMessage,HttpStatus.CREATED); //201
+		return new ResponseEntity<String>(bodyMessage, HttpStatus.CREATED);
 	}
 	
 	@PostMapping("/request-body4")
 	@ResponseBody
-	public String requestBodyText(@RequestBody String bodyMessage) {
-		System.out.println(bodyMessage);
-		return bodyMessage+"응답의 bodyMessage 출력";
+	public String requestBodyText(@RequestBody String bodyMessage){
+		return bodyMessage;
 	}
 }
+
+
+
+
+
+
+
+
