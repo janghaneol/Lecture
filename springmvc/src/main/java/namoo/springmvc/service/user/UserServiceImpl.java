@@ -1,6 +1,8 @@
 package namoo.springmvc.service.user;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.PostConstruct;
 
@@ -29,6 +31,17 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public List<User> findUsers() {
 		return userMapper.findAll();
+	}
+	
+	@Override
+	public List<User> search(String type, String value){
+		Map<String, String> searchMap = new HashMap<String, String>();
+		if(type.equalsIgnoreCase("name")) {
+			
+		}
+		searchMap.put("type", type);
+		searchMap.put("value", value);
+		return userMapper.findByOption(searchMap);
 	}
 
 }

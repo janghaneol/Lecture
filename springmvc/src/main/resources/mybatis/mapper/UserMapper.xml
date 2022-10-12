@@ -20,6 +20,20 @@
 		ORDER BY regdate DESC
 	</select>
 	
+	<select id="findByOption" resultType="User">
+		SELECT id, name, email, TO_CHAR(regdate, 'YYYY-MM-DD HH24:MI:SS DAY') regdate
+		FROM users
+		WHERE id = #{value}
+		<if test="type != null">
+			<choose>
+				<when test="type == id">
+					WHERE 
+				</when>
+			</choose>
+		</if>
+		ORDER BY regdate DESC
+	</select>
+	
 	<insert id="create" parameterType="User">
 		INSERT INTO users(id, passwd, name, email)
 		VALUES(#{id}, #{passwd},  #{name}, #{email})
