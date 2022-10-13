@@ -1,4 +1,4 @@
-package namoo.springmvc.controller.user;
+package namoo.springjpa.controller.user;
 
 import java.util.List;
 
@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import lombok.extern.slf4j.Slf4j;
-import namoo.springmvc.dto.user.User;
-import namoo.springmvc.service.user.UserService;
+import namoo.springjpa.entity.user.User;
+import namoo.springjpa.service.user.UserService;
 
 @Controller
 @RequestMapping("/users")

@@ -1,4 +1,4 @@
-package namoo.springmvc.service.user;
+package namoo.springjpa.service.user;
 
 import java.util.HashMap;
 import java.util.List;
@@ -9,14 +9,14 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import namoo.springmvc.dto.user.User;
-import namoo.springmvc.mapper.user.UserMapper;
+import namoo.springjpa.entity.user.User;
+import namoo.springjpa.repository.user.UserRepository;
 
 @Service
 public class UserServiceImpl implements UserService {
 	
 	@Autowired
-	private UserMapper userMapper;
+	private UserRepository userMapper;
 
 	@Override
 	public void registUser(User user) {
