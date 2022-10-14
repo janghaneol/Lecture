@@ -6,15 +6,19 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.DynamicInsert;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * User DTO
  * 
- * @author 김기정
+ * @author 장한얼
  *
  */
 //JPA가 사용하는 객체라는 의미의 에노테이션(JPA가 인식)
@@ -25,7 +29,10 @@ import lombok.Data;
 @DynamicInsert
 //Lombok 에노테이션
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
+	
 	//테이블의 PK와 해당 필드 매핑
 	@Id
 	private String id;
@@ -37,7 +44,9 @@ public class User {
 	//SQL 데이터타입 설정
 	//@Temporal(TemporalType.DATE)
 	//@Temporal(TemporalType.TIME)
-	//@Temporal(TemporalType.TIMESTAMP) : 디폴트
+//	@Temporal(TemporalType.TIMESTAMP) // : 디폴트
 	private Date regdate;
 }
+
+
 	

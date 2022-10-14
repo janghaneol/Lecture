@@ -23,8 +23,9 @@ public interface UserRepository {
 	/** 회원 정보 수정 */
 	public void  update(User user);
 	
-	/* 회원 검색*/
-	//public List<User> findByOption(Map<String, String> searchMap);
+//	/* 회원 검색*/
+//	public List<User> findByOption(Map<String, String> searchMap);
 	
-
+	/* 회원 검색 (JPA)*/
+	public List<User> findByName(String name);
 }
