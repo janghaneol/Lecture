@@ -28,11 +28,7 @@
 		</div>
 		<form class="row row-cols-lg-auto g-3 align-items-center">
 			<div class="col-12">
-				<select class="form-select" name="type">
-					<option value="">전체조회</option>
-					<option value="name">이름조회</option>
-					<option value="id">ID조회</option>
-				</select>
+				<p>검색된 회원 수 : ${pageResult.totalElements}</p>
 			</div>
 			<div class="col-12">
 				<input type="text" name="value">
@@ -58,7 +54,7 @@
 				</thead>
 				<tbody>
 
-					<c:forEach items="${list}" var="user">
+					<c:forEach items="${pageResult.content}" var="user">
 						<tr>
 							<td><a href="/users/${user.id}">${user.id}</a></td>
 							<td>${user.name}</td>

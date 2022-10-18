@@ -56,4 +56,10 @@ public class JpaUserRepositoryV2 implements UserRepository {
 		return userRepository.findAllByNameLike(name);
 	}
 	
+	@Override
+	public List<User> findByLastName(String name) {
+		// TODO Auto-generated method stub
+		return userRepository.findAllByNameStartingWith(name);
+	}
+	
 }

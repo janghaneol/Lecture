@@ -68,4 +68,10 @@ public class JpaUserRepository implements UserRepository {
 		return null;
 	}
 
+	@Override
+	public List<User> findByLastName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

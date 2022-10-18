@@ -32,8 +32,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
-	
-	//테이블의 PK와 해당 필드 매핑
+
+	// 테이블의 PK와 해당 필드 매핑
 	@Id
 	private String id;
 //객체 필드명과 테이블 컬럼명 동일 시 생략 가능
@@ -41,12 +41,9 @@ public class User {
 	private String name;
 	private String passwd;
 	private String email;
-	//SQL 데이터타입 설정
-	//@Temporal(TemporalType.DATE)
-	//@Temporal(TemporalType.TIME)
+	// SQL 데이터타입 설정
+	// @Temporal(TemporalType.DATE)
+	// @Temporal(TemporalType.TIME)
 //	@Temporal(TemporalType.TIMESTAMP) // : 디폴트
 	private Date regdate;
 }
-
-
-	

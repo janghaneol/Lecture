@@ -68,7 +68,17 @@ class UserRepositoryTest2 {
 	public void findUser() {
 		String searchValue = "장한얼";
 		List<User> user = userRepository.findByName(searchValue);
-		log.info("검색된 searchValue의 값을 가진 회원 정보 {} : ", user);
+		for (User findUser : user) {
+			log.info("검색된 searchValue의 값을 가진 회원 정보 {} : ", findUser);
+		}
+	}
+	
+	@Test
+	public void lastNameSearch() {
+		List<User> list = userRepository.findByLastName("장");
+		for (User user : list) {
+			log.info("성으로 검색한 회원 정보 : {}",user);
+		}
 	}
 	
 }

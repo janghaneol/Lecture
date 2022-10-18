@@ -28,4 +28,10 @@ public interface UserRepository {
 	
 	/* 회원 검색 (JPA)*/
 	public List<User> findByName(String name);
+	
+	/* 회원 성으로 검색 */
+	public List<User> findByLastName(String name);
+	
+	/* 날짜로 검색 */
+	
 }
