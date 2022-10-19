@@ -31,12 +31,23 @@ public class UserController {
 	
 	// 회원 목록 처리
 	@GetMapping
-	public String list(@PageableDefault(size=10, page = 1) Pageable pageable,@RequestParam(required = false, defaultValue = "") String value, Model model) {
+	public String list(@PageableDefault(size=10, page = 0) Pageable pageable ,@RequestParam(required = false, defaultValue = "") String value,
+			@RequestParam(required = false, defaultValue = "") String pageNum,
+			Model model) {
 		Page<User> pageResult = jpaRepository.findAllByIdContainingOrEmailContaining(value, value, pageable);
 		
-		log.info("회원 목록 : {}", pageResult.getContent());
+		int pageNumber = pageResult.getPageable().getPageNumber();
+		int totalPage = pageResult.getTotalPages();
+		int pageBlock = 5;
+		int startBlockPage = ((pageNumber)/pageBlock)*pageBlock+1;
+		int endBlockPage = startBlockPage+5;
+		endBlockPage = endBlockPage>totalPage ? totalPage : endBlockPage;
+		
+		
 		log.info("회원 목록 요청 : {}, {}" , pageable.getPageSize(), pageable.getPageNumber());
 		model.addAttribute("pageResult", pageResult);
+		model.addAttribute("startBlockPage", startBlockPage);
+		model.addAttribute("endBlockPage", endBlockPage);
 		return "user/users";
 	}
 	

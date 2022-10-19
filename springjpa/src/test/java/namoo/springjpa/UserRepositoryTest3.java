@@ -118,10 +118,9 @@ class UserRepositoryTest3 {
 	}
 	
 	@Test
-	@Disabled
 	public void findAllPaging() {
 		Sort sort = Sort.by("id");
-		Pageable pageable = PageRequest.of(1, 5, sort);
+		Pageable pageable = PageRequest.of(2, 5, sort);
 		Page<User> pageResults = userRepository.findAll(pageable);
 		
 		log.info("목록 : {}" , pageResults.getContent());
@@ -137,6 +136,7 @@ class UserRepositoryTest3 {
 	}
 	
 	@Test
+	@Disabled
 	public void findAllByIdContainingOrEmailContaining() {
 		String searchValue = "n";
 		Pageable pageable = PageRequest.of(0,5);
