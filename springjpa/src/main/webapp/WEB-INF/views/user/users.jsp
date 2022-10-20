@@ -70,8 +70,8 @@
 			<ul class="pagination justify-content-center">
 				<li class="page-item"><a class="page-link" href="/users?page=0">처음으로</a></li>
 
-				<c:forEach begin="${startBlockPage}" end="${endBlockPage-1}" var="i">
-							<li class="page-item"><a class="page-link" href="/users/?page=${i}">${i}</a></li>
+				<c:forEach begin="${startBlockPage}" end="${endBlockPage}" var="i">
+							<li class="page-item"><a class="page-link" href="/users/?page=${i-1}&value=${value}">${i}</a></li>
 				</c:forEach>
 				<li class="page-item"><a class="page-link" href="#">다음으로</a></li>
 			</ul>

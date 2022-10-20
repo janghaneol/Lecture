@@ -31,16 +31,16 @@ public class UserController {
 	
 	// 회원 목록 처리
 	@GetMapping
-	public String list(@PageableDefault(size=10, page = 0) Pageable pageable ,@RequestParam(required = false, defaultValue = "") String value,
-			@RequestParam(required = false, defaultValue = "") String pageNum,
+	public String list(@PageableDefault(size=10, page = 0) Pageable pageable ,
+			@RequestParam(required = false, defaultValue = "") String value,
 			Model model) {
 		Page<User> pageResult = jpaRepository.findAllByIdContainingOrEmailContaining(value, value, pageable);
 		
-		int pageNumber = pageResult.getPageable().getPageNumber();
+		int pageNumber = pageResult.getPageable().getPageNumber()+1;
 		int totalPage = pageResult.getTotalPages();
 		int pageBlock = 5;
 		int startBlockPage = ((pageNumber)/pageBlock)*pageBlock+1;
-		int endBlockPage = startBlockPage+5;
+		int endBlockPage = startBlockPage+pageBlock-1;
 		endBlockPage = endBlockPage>totalPage ? totalPage : endBlockPage;
 		
 		

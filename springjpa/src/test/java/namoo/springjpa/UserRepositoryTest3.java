@@ -118,6 +118,7 @@ class UserRepositoryTest3 {
 	}
 	
 	@Test
+	@Disabled
 	public void findAllPaging() {
 		Sort sort = Sort.by("id");
 		Pageable pageable = PageRequest.of(2, 5, sort);
@@ -136,16 +137,11 @@ class UserRepositoryTest3 {
 	}
 	
 	@Test
-	@Disabled
 	public void findAllByIdContainingOrEmailContaining() {
 		String searchValue = "n";
 		Pageable pageable = PageRequest.of(0,5);
 		Page<User> pageResults = userRepository.findAllByIdContainingOrEmailContaining(searchValue, searchValue, pageable);
-		List<User> list = pageResults.getContent();
-		
-		for (User page : list) {
-			log.info("목록 : {}" , page);
-		}
+		log.info("목록 : {} ", pageResults.getContent());
 		log.info("전체 목록 갯수 : {}", pageResults.getTotalElements());
 		log.info("현재 페이지 목록 갯수 : {}", pageResults.getNumberOfElements());
 		log.info("전체 페이지 수 : {}", pageResults.getTotalPages());
