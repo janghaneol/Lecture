@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
 import lombok.AllArgsConstructor;
@@ -27,8 +30,15 @@ public class Member {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "member_seq_gen")
 	private Long id;
-	@Column(name="team_id")
-	private Long teamId;
+//	@Column(name = "team_id")
+//	private Long teamId;
+	@ManyToOne
+	@JoinColumn(name="team_id")
+	private Team team;
+	
+	@OneToOne
+	@JoinColumn(name="locker_id")
+	private Locker locker;
 	private String name;
 	private int age;
 	

@@ -2,6 +2,7 @@ package namoo.springjpa;
 
 import java.util.Optional;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,6 +23,7 @@ public class JpaRelationTest {
 	private JpaTeamRepository teamRepository;
 
 	@Test
+	@Disabled
 	public void jpaTest() {
 		// Team 생성
 		Team insertTeam = new Team();
@@ -32,7 +34,7 @@ public class JpaRelationTest {
 		Member insertMember = new Member();
 		insertMember.setName("Benzema");
 		insertMember.setAge(33);
-		insertMember.setTeamId(insertTeam.getId());
+//		insertMember.setTeamId(insertTeam.getId());
 		memberRepository.save(insertMember);
 
 		// 조회 시 2번 조회해야 한다.
@@ -48,4 +50,25 @@ public class JpaRelationTest {
 			}
 		}
 	}
+	
+	@Test
+	public void jpaTest2() {
+		Team insertTeam = new Team();
+		insertTeam.setName("Real Madrid");
+		teamRepository.save(insertTeam);
+		
+		Member insertMember = new Member();
+		insertMember.setName("Benzema");
+		insertMember.setAge(33);
+		insertMember.setTeam(insertTeam);
+		memberRepository.save(insertMember);
+		
+		Optional<Member> optional = memberRepository.findById(insertMember.getId());
+		if(optional.isPresent()) {
+			Member findMember = optional.get();
+			Team findTeam = findMember.getTeam();
+			log.info("회원이름 : {}, 팀 이름 : {}", findMember.getName(), findTeam.getName());
+		}
+	}
+	
 }
