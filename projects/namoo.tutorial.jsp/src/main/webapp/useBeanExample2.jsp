@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<jsp:useBean id="user" class="namoo.yorizori.dto.user.User" scope="session"/>
+<jsp:useBean id="user" class="namoo.user.dto.User" scope="session"/>
 <!-- useBean의 scope를 session으로 설정하면 다른 브라우저에서도 접근이 가능하다. -->
 <!DOCTYPE html>
 <html>

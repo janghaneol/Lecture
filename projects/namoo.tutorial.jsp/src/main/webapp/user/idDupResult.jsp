@@ -6,7 +6,7 @@ request.setCharacterEncoding("utf-8");
 String id = request.getParameter("id");
 %>
 <%
-boolean result = JdbcDaoFactory.getInstance().getUserDao().read(id);
+ User user = JdbcDaoFactory.getInstance().getUserDao().read(id);
 %>
 <html lang="ko">
 <head>
@@ -18,7 +18,7 @@ boolean result = JdbcDaoFactory.getInstance().getUserDao().read(id);
 		<input type="submit" value="중복체크">
 	</form>
 	<%
-	if (result) {// 아이디중복
+	if (user.getId().equals(id)) {// 아이디중복
 	%>
 	<p style="color: red">사용할 수 없는 아이디입니다.</p>
 	<%

@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<jsp:useBean id="user" class="namoo.yorizori.dto.user.User" scope="request"></jsp:useBean>
+<jsp:useBean id="user" class="namoo.user.dto.User" scope="request"></jsp:useBean>
 <!DOCTYPE html>
 <html>
 <head>

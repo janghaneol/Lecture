@@ -1,6 +1,6 @@
 <%@ page import="java.util.List"%>
-<%@ page import="namoo.yorizori.common.factory.JdbcDaoFactory"%>
-<%@ page import="namoo.yorizori.dto.user.User"%>
+<%@ page import="namoo.common.factory.JdbcDaoFactory"%>
+<%@ page import="namoo.user.dto.User"%>
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 
 <%-- 사용자 요청 페이지 따른 사용자 목록 처리 --%>

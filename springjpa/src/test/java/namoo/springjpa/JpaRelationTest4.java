@@ -29,7 +29,7 @@ public class JpaRelationTest4 {
 	// 객체지향적인 방식
 	@Test
 	@Transactional
-	@Disabled
+//	@Disabled
 	public void jpaInsert() {
 		Locker locker = new Locker();
 		locker.setName("락커1");
@@ -45,8 +45,8 @@ public class JpaRelationTest4 {
 		Locker locker2 = member.getLocker();
 		log.info("락커 이름 : {} 회원 이름 : {}", locker2.getName(),member.getName());
 		
-		Member member2 = locker.getMember();
-		log.info("라커이름 : {} 회원이름 : {}",member2.getLocker().getName(), member2.getName());
+//		Member member2 = locker2.getMember();
+//		log.info("라커이름 : {} 회원이름 : {}",member2.getLocker().getName(), member2.getName());
 	}
 	
 	@Test
